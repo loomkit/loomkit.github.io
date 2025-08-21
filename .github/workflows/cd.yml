@@ -1,0 +1,40 @@
+name: CD
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        experimental: [false]
+    name: 📦️ Build on ${{ matrix.os }}
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+      - name: 👷 Install, build, and upload docs
+        uses: withastro/action@v4
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy to https://loomkit.github.io 🚀
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 📂 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
