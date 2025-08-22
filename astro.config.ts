@@ -13,7 +13,7 @@ export default defineConfig({
         alt: '🧵',
         replacesTitle: false,
       },
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/loomkit/starter' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/loomkit' }],
 			sidebar: [
 				{
 					label: 'Guides',
