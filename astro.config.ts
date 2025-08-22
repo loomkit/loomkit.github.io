@@ -21,9 +21,14 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Getting Started', slug: 'guides/getting-started' },
+						{ label: 'Starter Kit', slug: 'guides/starter-kit' },
+						{ label: 'Core', slug: 'guides/core' },
 					],
+				},
+				{
+					label: 'Concepts',
+					autogenerate: { directory: 'concepts' },
 				},
 				{
 					label: 'Reference',
