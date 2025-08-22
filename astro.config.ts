@@ -10,7 +10,7 @@ export default defineConfig({
       favicon: '/favicon.svg',
       logo: {
         src: './src/assets/loom.svg',
-        alt: 'Loom Logo',
+        alt: '🧵',
         replacesTitle: false,
       },
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/loomkit/starter' }],
