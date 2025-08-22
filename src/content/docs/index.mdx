@@ -1,6 +1,6 @@
 ---
 title: Welcome to Loom
-description: Get started building your web application with Loom.
+description: Loom is a production-ready Laravel starter kit with modular Core and optional features, ready to launch your project in minutes.
 template: splash
 hero:
   tagline: Build modern web applications without the hassle ! 🚀
@@ -9,29 +9,55 @@ hero:
   actions:
     - text: Get Started
       link: /guides/example/
-      icon: right-arrow
+      icon: rocket
       variant: primary
     - text: View on GitHub
       link: https://github.com/loomkit/loom
-      icon: external
+      icon: github
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Tabs, TabItem, Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Quick Start
+
+<Tabs>
+  <TabItem label="New Project" icon="rocket">
+```sh
+composer create-project loomkit/starter my-loom-app
+cd my-loom-app
+bun install
+php artisan migrate --seed
+composer dev
+```
+  </TabItem>
+
+  <TabItem label="Existing Project" icon="laptop">
+```sh
+composer require loomkit/loom -W
+php artisan loom:install
+composer dev
+```
+  </TabItem>
+</Tabs>
+
+## Next Steps
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Explore Starter Kit" icon="puzzle">
+    Discover the features included in Loom Starter Kit.
+    <a href="/guides/starter-kit/">View Starter Kit</a>
+  </Card>
+  <Card title="Loom Core" icon="heart">
+    Understand the core package, modules, and commands.
+    <a href="/guides/core/">Explore Core</a>
+  </Card>
+  <Card title="Reference" icon="open-book">
+    Browse all available commands, config options, and APIs.
+    <a href="/reference/api/">View Reference</a>
+  </Card>
+  <Card title="Contribute" icon="github">
+    Learn how to contribute or add new modules.
+    <a href="https://github.com/loomkit/loom">GitHub</a>
+  </Card>
 </CardGrid>
